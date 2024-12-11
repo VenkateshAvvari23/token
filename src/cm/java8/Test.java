@@ -10,7 +10,7 @@ public class Test {
 	public static void main(String[] args) {
 
 
-		List<String> fruits = Arrays.asList("apple","orange","pineapple","berry","strawberry","kiwi","berry","kiwi");	
+		List<String> fruits = Arrays.asList("apple","orange","pineapple","berry","strawberry","kiwi","berry","kiwi","try");	
 
 
 		System.out.println("convert String to uppercase and sort reverse order");
@@ -118,6 +118,30 @@ Optional<String> s1=fruits.stream()
 	System.out.println(o);
 	       
 	
+	
+	
+	System.out.println("list of string with vowels");
+	
+	fruits.stream()
+	      .filter(str->str.matches(".*[aeiou].*"))
+	      .forEach(str->System.out.println(str));
+	
+	
+	System.out.println("reverse each word in a string");
+	
+	fruits.stream()
+	      .map(str->new StringBuffer(str).reverse())
+	      .forEach(str->System.out.println(str));
+	
+	
+	System.out.println("remove null and empty string");
+	
+	
+	List<String> words = Arrays.asList("apple","","pineapple","berry",null,"strawberry","","berry","",null);	
+
+	words.stream()
+	      .filter(str->str!=null&&(!str.isEmpty()))
+	      .forEach(System.out::println);
 	
 	}
 
